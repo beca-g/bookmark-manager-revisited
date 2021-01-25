@@ -38,3 +38,34 @@ I would like to add a tag to my bookmarks
 
 ## Initial Domain Model
 ![domain_model](https://i.imgur.com/I622wp4.png)
+
+Getting started
+================
+
+### Setup
+
+From the command line run the following:
+```
+git clone git@github.com:beca-g/bookmark-manager-revisited.git
+cd bookmark-manager-revisited
+```
+### Install dependencies
+```
+bundle
+```
+
+### To run the Bookmark Manager app:
+```
+rackup -p 3000
+```
+
+### To run tests:
+```
+rspec
+```
+
+### To run linting:
+```
+rubocop
+```
+
