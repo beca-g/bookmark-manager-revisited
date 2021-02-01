@@ -1,10 +1,8 @@
 feature "viewing bookmarks" do
   scenario "a user can see bookmarks" do
-    connection =  PG.connect(dbname: "bookmarks_test")
-
-    connection.exec("INSERT INTO bookmarks VALUES(1, 'http://www.asos.com');")
-    connection.exec("INSERT INTO bookmarks VALUES(2, 'http://www.rightmove.com');")
-    connection.exec("INSERT INTO bookmarks VALUES(3, 'http://www.cultbeauty.co.uk');")
+    Bookmark.create(url: "http://www.asos.com")
+    Bookmark.create(url: "http://www.rightmove.com")
+    Bookmark.create(url: "http://www.cultbeauty.co.uk")
 
     visit('/bookmarks')
 
