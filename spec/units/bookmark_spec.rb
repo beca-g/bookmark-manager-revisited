@@ -16,4 +16,12 @@ describe Bookmark do
       expect(bookmarks).to include "http://www.cultbeauty.co.uk"
     end
   end
+
+  describe ".create" do
+    it "creates a new bookamrk" do 
+      Bookmark.create(url: "http://www.test.com")
+
+      expect(Bookmark.all).to include "http://www.test.com"
+    end
+  end
 end
