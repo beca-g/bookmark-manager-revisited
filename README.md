@@ -54,16 +54,24 @@ cd bookmark-manager-revisited
 bundle
 ```
 
-### Database setup
-1. Connect to `psql`
-2. Create the database using the psql command `CREATE DATABASE bookmark_manager;`
-3. Connect to the database using the pqsl command `\c bookmark_manager;`
-4. Run the query we have saved in the file `01_create_bookmarks_table.sql`
+### Database set up
+
+Connect to `psql` abd create the `bookmarks` and `bookmarks_test` datatbases:
+
+```
+CREATE DATABASE bookmarks;
+CREATE DATABASE bookmarks_test;
+```
+
+To set up the datatbase tables connect to each database in `psql` abd rub the SQL scripts in the db/migrations folder in the given order.
+
 
 ### To run the Bookmark Manager app:
 ```
 rackup -p 3000
 ```
+
+To view bookmars, navigate to `localhost:3000/bookmarks`.
 
 ### To run tests:
 ```
