@@ -4,9 +4,9 @@ require "database_helpers"
 describe Bookmark do
   describe ".all" do
     it "returns all bookamrks" do
-      connection =  PG.connect(dbname: "bookmarks_test")
+      PG.connect(dbname: "bookmarks_test")
 
-      bookmark = Bookmark.create(title: "ASOS", url:"http://www.asos.com")
+      bookmark = Bookmark.create(title: "ASOS", url: "http://www.asos.com")
       Bookmark.create(title: "Right Move", url: "http://www.rightmove.com")
       Bookmark.create(title: "Cult Beauty", url: "http://www.cultbeauty.co.uk")
 
@@ -23,7 +23,7 @@ describe Bookmark do
   describe ".create" do
     it "creates a new bookamrk" do 
       bookmark = Bookmark.create(title: "Test", url: "http://www.test.com")
-      persisted_data =  persisted_data(id: bookmark.id)
+      persisted_data = persisted_data(id: bookmark.id)
 
       expect(bookmark).to be_a Bookmark
       expect(bookmark.id).to eq persisted_data["id"]
