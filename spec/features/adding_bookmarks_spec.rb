@@ -4,7 +4,6 @@ feature "adding bookmarks" do
     fill_in("url", with: "http://www.test.com")
     fill_in("title", with: "Test")
     click_button("Save")
-    visit("/bookmarks")
 
     expect(page).to have_link("Test", href: "http://www.test.com")
   end  
