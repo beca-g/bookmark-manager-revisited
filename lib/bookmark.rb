@@ -9,6 +9,16 @@ class Bookmark
     @url = url
   end
 
+  def self.find(id:)
+    if ENV["ENVIRONMENT"] == "test" 
+      connection = PG.connect(dbname: "bookmarks_test")
+    else
+      connection = PG.connect(dbname: "bookmarks")
+    end
+    result = connection.exec("SELECT * FROM bookmarks WHERE id = #{id}") 
+    Bookmark.new(id: result[0]["id"], title: result[0]["title"], url: result[0]["url"])
+  end
+
   def self.all 
     if ENV["ENVIRONMENT"] == "test" 
       connection = PG.connect(dbname: "bookmarks_test")
