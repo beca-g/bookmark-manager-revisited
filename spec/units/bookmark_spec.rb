@@ -1,27 +1,36 @@
 require "bookmark"
+require "database_helpers"
 
 describe Bookmark do
   describe ".all" do
     it "returns all bookamrks" do
       connection =  PG.connect(dbname: "bookmarks_test")
 
-      connection.exec("INSERT INTO bookmarks VALUES(1, 'http://www.asos.com');")
-      connection.exec("INSERT INTO bookmarks VALUES(2, 'http://www.rightmove.com');")
-      connection.exec("INSERT INTO bookmarks VALUES(3, 'http://www.cultbeauty.co.uk');")
+      bookmark = Bookmark.create(title: "ASOS", url:"http://www.asos.com")
+      Bookmark.create(title: "Right Move", url: "http://www.rightmove.com")
+      Bookmark.create(title: "Cult Beauty", url: "http://www.cultbeauty.co.uk")
 
       bookmarks = Bookmark.all
 
-      expect(bookmarks).to include "http://www.asos.com"
-      expect(bookmarks).to include "http://www.rightmove.com"
-      expect(bookmarks).to include "http://www.cultbeauty.co.uk"
+      p bookmarks
+
+      expect(bookmarks.length).to eq 3
+      expect(bookmarks.first).to be_a Bookmark
+      expect(bookmarks.first.id).to eq bookmark.id
+      expect(bookmarks.first.title).to eq "ASOS"
+      expect(bookmarks.first.url).to eq "http://www.asos.com"
     end
   end
 
   describe ".create" do
     it "creates a new bookamrk" do 
-      Bookmark.create(url: "http://www.test.com")
+      bookmark = Bookmark.create(title: "Test", url: "http://www.test.com")
+      persisted_data =  persisted_data(id: bookmark.id)
 
-      expect(Bookmark.all).to include "http://www.test.com"
+      expect(bookmark).to be_a Bookmark
+      expect(bookmark.id).to eq persisted_data["id"]
+      expect(bookmark.title).to eq "Test"
+      expect(bookmark.url).to eq "http://www.test.com"
     end
   end
 end
