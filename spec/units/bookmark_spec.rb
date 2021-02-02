@@ -12,8 +12,6 @@ describe Bookmark do
 
       bookmarks = Bookmark.all
 
-      p bookmarks
-
       expect(bookmarks.length).to eq 3
       expect(bookmarks.first).to be_a Bookmark
       expect(bookmarks.first.id).to eq bookmark.id
@@ -31,6 +29,16 @@ describe Bookmark do
       expect(bookmark.id).to eq persisted_data["id"]
       expect(bookmark.title).to eq "Test"
       expect(bookmark.url).to eq "http://www.test.com"
+    end
+  end
+
+  describe ".delete" do
+    it "deletes the selected bookmark" do
+      bookmark = Bookmark.create(title: "Test", url: "http://www.test.com")
+
+      Bookmark.delete(id: bookmark.id)
+
+      expect(Bookmark.all.length).to eq 0
     end
   end
 end
