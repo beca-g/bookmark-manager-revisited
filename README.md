@@ -36,8 +36,8 @@ So that I can organise my bookmarks,
 I would like to add a tag to my bookmarks
 ```
 
-## Initial Domain Model
-![domain_model](https://i.imgur.com/I622wp4.png)
+## Bookmarks Domain Model
+![domain_model](https://imgur.com/LjlXqNj)
 
 Getting started
 ================
@@ -82,4 +82,3 @@ rspec
 ```
 rubocop
 ```
-
