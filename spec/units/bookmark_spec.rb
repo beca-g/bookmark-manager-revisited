@@ -32,8 +32,7 @@ describe Bookmark do
     end
 
     it "does not create a new bookmark if the URL is not valid" do
-      bookmark = Bookmark.create(title: "Test", url: "test")
-      p Bookmark.all
+      Bookmark.create(title: "Test", url: "test")
       expect(Bookmark.all).to be_empty
     end
   end
