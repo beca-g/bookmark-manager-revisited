@@ -39,6 +39,12 @@ I would like to add a tag to my bookmarks
 ## Bookmarks Domain Model
 ![domain_model](https://imgur.com/LjlXqNj)
 
+## Entity Relationship Diagram
+
+The diagram below indicates that:
+- A Bookmark **has many** Comments
+
+
 Getting started
 ================
 
