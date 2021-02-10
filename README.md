@@ -37,12 +37,14 @@ I would like to add a tag to my bookmarks
 ```
 
 ## Bookmarks Domain Model
-![domain_model](https://imgur.com/LjlXqNj)
+![domain_model](https://imgur.com/LjlXqNj.png)
 
 ## Entity Relationship Diagram
 
 The diagram below indicates that:
 - A Bookmark **has many** Comments
+
+![DB Relationship](https://i.imgur.com/hp8yq09.png)
 
 
 Getting started
