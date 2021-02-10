@@ -34,7 +34,7 @@ class Bookmark
   end
 
   def self.create(url:, title:)
-    return false unless is_url?(url)
+    return false unless url?(url)
 
     result = DatabaseConnection.query(
       "INSERT INTO bookmarks (title, url) VALUES('#{title}', '#{url}') 
@@ -59,9 +59,7 @@ class Bookmark
     comment_class.where(bookmark_id: id)
   end
 
-  private
-
-  def self.is_url?(url)
+  private_class_method def self.url?(url)
     url =~ /\A#{URI::DEFAULT_PARSER.make_regexp(['http', 'https'])}\z/
   end
 end
