@@ -43,6 +43,8 @@ I would like to add a tag to my bookmarks
 
 The diagram below indicates that:
 - A Bookmark **has many** Comments
+- A Comment **belongs to** a Bookmark
+- A 
 
 ![DB Relationship](https://i.imgur.com/hp8yq09.png)
 
