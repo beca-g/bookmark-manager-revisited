@@ -44,7 +44,6 @@ I would like to add a tag to my bookmarks
 The diagram below indicates that:
 - A Bookmark **has many** Comments
 - A Comment **belongs to** a Bookmark
-- A 
 
 ![DB Relationship](https://i.imgur.com/hp8yq09.png)
 
@@ -73,7 +72,7 @@ CREATE DATABASE bookmarks;
 CREATE DATABASE bookmarks_test;
 ```
 
-To set up the datatbase tables connect to each database in `psql` abd rub the SQL scripts in the db/migrations folder in the given order.
+To set up the datatbase tables connect to each database in `psql` and run the SQL scripts in the db/migrations folder in the given order.
 
 
 ### To run the Bookmark Manager app:
