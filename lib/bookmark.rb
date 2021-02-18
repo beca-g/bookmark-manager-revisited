@@ -1,5 +1,6 @@
 require "uri"
 require_relative "./comment.rb"
+require_relative "./tag.rb"
 require_relative "database_connection"
 
 class Bookmark
@@ -57,6 +58,10 @@ class Bookmark
 
   def comments(comment_class = Comment)
     comment_class.where(bookmark_id: id)
+  end
+
+  def tags(tag_class = Tag)
+    tag_class.where(bookmark_id: id)
   end
 
   private_class_method def self.url?(url)
