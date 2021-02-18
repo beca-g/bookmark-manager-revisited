@@ -35,6 +35,11 @@ As a user
 So that I can organise my bookmarks,
 I would like to add a tag to my bookmarks
 ```
+```
+As a user
+So I can find relevant bookmarks
+I want to filter Bookmarks by Tags
+```
 
 ## Bookmarks Domain Model
 ![domain_model](https://imgur.com/LjlXqNj.png)
@@ -44,8 +49,10 @@ I would like to add a tag to my bookmarks
 The diagram below indicates that:
 - A Bookmark **has many** Comments
 - A Comment **belongs to** a Bookmark
+- A Tag **has many** Bookmarks
+- A Bookmark **has many** Tags
 
-![DB Relationship](https://i.imgur.com/hp8yq09.png)
+![DB Relationship](https://imgur.com/q9hvWl2.png)
 
 
 Getting started
