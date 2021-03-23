@@ -1,7 +1,7 @@
 Bookmark Manager
 ================
 
-A bookmark manager to save and maintain a collection of bookmarks (URLs) where a user is able to save a useful webpage, add tags to the webpages saved to find them later, browse saved bookmarks of other users and comment on the bookmarks. 
+A bookmark manager to save and maintain a collection of bookmarks (URLs) where a user is able to save a useful webpage, add tags to the saved webpages to find them later, browse saved bookmarks of other users and comment on the bookmarks. 
 
 User Stories
 ============
